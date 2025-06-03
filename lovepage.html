@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Girlfriend Offer Letter 💌</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Dancing Script', sans-serif;
+      color: #b30059;
+      transition: all 0.4s ease;
+    }
+
+    /* Toggle Button */
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background: #fff;
+      color: #b30059;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    #theme-toggle:hover {
+      background-color: #f8d7da;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('May 20, 2025, 11_55_02 PM.png') center center / contain no-repeat;
+      background-color: #ffe6ea;
+      opacity: 0.5;
+      z-index: -2;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    .heart-sprinkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .heart-icon {
+      position: absolute;
+      width: 30px;
+      opacity: 0.4;
+      z-index: -1;
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-10px) rotate(20deg); }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255, 102, 153, 0.3);
+      backdrop-filter: blur(5px);
+      transition: background 0.4s ease;
+    }
+
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+      color: #cc0052;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      font-weight: normal;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1.1em;
+      margin: 15px 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 40px;
+      font-style: italic;
+      font-size: 1.2em;
+    }
+
+    .ps {
+      font-size: 1em;
+      color: #d63384;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .heart {
+      text-align: center;
+      font-size: 2em;
+      color: red;
+      margin: 10px 0;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+  body.dark-theme {
+    background-color: #000000;
+    color: #ffd700; /* gold */
+  }
+
+  body.dark-theme .background {
+    opacity: 0.1;
+  }
+
+body.dark-theme .container {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 215, 0, 0.12),
+    rgba(0, 0, 0, 0.8)
+  );
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+
+  body.dark-theme h1,
+  body.dark-theme h2 {
+    color: #ffd700;
+  }
+
+  body.dark-theme .ps {
+    color: #ffefb0;
+  }
+
+  body.dark-theme #theme-toggle {
+    background-color: #111;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+  }
+
+  body.dark-theme #theme-toggle:hover {
+    background-color: #222;
+  }
+
+  body.dark-theme .heart {
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Toggle button -->
+  <button id="theme-toggle">🌗 Toggle Theme</button>
+
+  <!-- Background image -->
+  <div class="background"></div>
+
+  <!-- Scattered heart icons -->
+  <div class="heart-sprinkles">
+    <!-- [Heart icons remain unchanged] -->
+    <img src="heart.jpg" class="heart-icon" style="top:5%; left:10%;">
+    <img src="heart.jpg" class="heart-icon" style="top:20%; left:80%;">
+    <img src="heart.jpg" class="heart-icon" style="top:35%; left:25%;">
+    <img src="heart.jpg" class="heart-icon" style="top:60%; left:70%;">
+    <img src="heart.jpg" class="heart-icon" style="top:75%; left:15%;">
+    <img src="heart.jpg" class="heart-icon" style="top:85%; left:55%;">
+    <img src="heart.jpg" class="heart-icon" style="top:50%; left:5%;">
+    <img src="heart.jpg" class="heart-icon" style="top:10%; left:65%;">
+    <img src="heart.jpg" class="heart-icon" style="top:10%; left:98%;">
+    <img src="heart.jpg" class="heart-icon" style="top:10%; left:75%;">
+    <img src="heart.jpg" class="heart-icon" style="top:80%; left:5%;">
+    <img src="heart.jpg" class="heart-icon" style="top:20%; left:65%;">
+    <img src="heart.jpg" class="heart-icon" style="top:90%; left:98%;">
+    <img src="heart.jpg" class="heart-icon" style="top:35%; left:75%;">
+  </div>
+
+  <!-- Letter content -->
+  <div class="container">
+    <!-- [Your letter content remains unchanged] -->
+    <h1>Official Offer Letter 💌</h1>
+    <h2>For the Position of Girlfriend</h2>
+
+    <p><strong>From:</strong> Venkatesha Prasad Sridar<br>
+    410 Kerby St, #333<br>
+    Arlington, TX 76013</p>
+
+    <p><strong>To:</strong> Gayathri Kankanampati<br>
+    12013 Magazine St, Apt 8403<br>
+    Orlando, FL 32828</p>
+
+    <p><strong>Date:</strong> 06/02/2025</p>
+
+    <p><strong>Subject:</strong> Official Offer Letter for Girlfriend Position</p>
+
+<p>My Dear <strong>Kannamma, Azhagii, Kanagavalli,</strong></p>
+
+    <p>After receiving your beautifully crafted HR-backed promotion letter, and recovering from the emotional meltdown it caused (in the best way possible), I am beyond thrilled to formally accept your offer.</p>
+
+    <p>With great joy, I am submitting my counter-offer — a full-time, all-in-one Girlfriend Offer Letter for the position of <strong>“My Forever Person.”</strong></p>
+
+    <p><strong>Position Title:</strong> Girlfriend, Chief Happiness Officer<br>
+    <strong>Department:</strong> Heartbeats & Happiness Bureau, lovingly overseen by Venkyy<br>
+    <strong>Start Date:</strong> Backdated to the day I started falling for you (approx: November/December)</p>
+
+    <p><strong>Key Responsibilities:</strong></p>
+    <ul>
+      <li>Continue looking at me like I’m Charles Leclerc in a Ferrari Car.</li>
+      <li>Laugh generously at my jokes (even the painfully bad ones — although mine are always good).</li>
+      <li>Provide sudden hugs and unsolicited hand-holding.</li>
+      <li>Participate in ridiculous photoshoots (awkward poses and positions encouraged).</li>
+      <li>Call dibs on my hoodies even before I offer them.</li>
+      <li>Keep me grounded, hyped, teased, and treasured—all at once.</li>
+    </ul>
+
+    <p><strong>Performance Metrics:</strong></p>
+    <ul>
+      <li>Number of times my heart skips: Daily</li>
+      <li>Percentage of thoughts occupied by you: 96.9%</li>
+      <li>Frequency of unprompted smiles caused by your messages: Alarmingly high</li>
+    </ul>
+
+    <p><strong>Compensation:</strong></p>
+    <ul>
+      <li>Full access to a loyal, caring, occasionally goofy, but always yours.</li>
+      <li>Guaranteed emotional safety, kisses on forehead, eyes, cheeks, neck, hands, legs etcc.., abrupt movie plans, and constant texts.</li>
+      <li>Unlimited “I love you”s and spontaneous dancing privileges in the kitchen.</li>
+    </ul>
+
+    <p><strong>Terms of Acceptance:</strong></p>
+    <p>Please confirm by smiling uncontrollably, calling me with a <strong>“Venkyyyy, I love youu ∞” </strong>or sending a photo of us that makes your heart do the thing.</p>
+
+    <p>This is not just a reply—it’s a lifetime agreement request. Thank you for choosing me. I promise to love you in every version, every mood, every moment.</p>
+
+    <strong> <p class="signature">With all my love,<br>Your forever Venkyy</p></strong>
+
+    <p class="ps">(PS: Let’s go moon-watching. You watch from Florida and I will watch from here. We may be separate now but by heart we are always together.)</p>
+
+    <div class="heart">❤️❤️❤️</div>
+  </div>
+
+
+  <!-- Theme Toggle Script -->
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function() {
+      document.body.classList.toggle("dark-theme");
+    });
+  </script>
+</body>
+</html>
