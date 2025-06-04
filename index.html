@@ -1,161 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Girlfriend Offer Letter 💌</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Dancing Script', sans-serif;
-      color: #b30059;
-      transition: all 0.4s ease;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Dancing Script', sans-serif;
+    color: #b30059;
+    transition: all 0.4s ease;
+  }
 
-    /* Toggle Button */
-    #theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      background: #fff;
-      color: #b30059;
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      font-family: 'Quicksand', sans-serif;
-    }
+  #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background: #fff;
+    color: #b30059;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Quicksand', sans-serif;
+  }
 
-    #theme-toggle:hover {
-      background-color: #f8d7da;
-    }
+  #theme-toggle:hover {
+    background-color: #f8d7da;
+  }
 
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('May 20, 2025, 11_55_02 PM.png') center center / contain no-repeat;
-      background-color: #ffe6ea;
-      opacity: 0.5;
-      z-index: -2;
-      pointer-events: none;
-      transition: opacity 0.4s;
-    }
+  .background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('May 20, 2025, 11_55_02 PM.png') center center / contain no-repeat;
+    background-color: #ffe6ea;
+    opacity: 0.5;
+    z-index: -2;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
 
-    .heart-sprinkles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-    }
+  body.show-background .background {
+    display: block;
+  }
 
-    .heart-icon {
-      position: absolute;
-      width: 30px;
-      opacity: 0.4;
-      z-index: -1;
-      animation: float 6s ease-in-out infinite alternate;
-    }
+  .sparkles {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
 
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(-10px) rotate(20deg); }
-    }
+  .sparkle {
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: blink 2s infinite alternate;
+    opacity: 0.6;
+  }
 
-    .container {
-      background: rgba(255, 255, 255, 0.1);
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 25px;
-      box-shadow: 0 0 20px rgba(255, 102, 153, 0.3);
-      backdrop-filter: blur(5px);
-      transition: background 0.4s ease;
-    }
+  @keyframes blink {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
 
-    h1, h2 {
-      font-family: 'Great Vibes', cursive;
-      text-align: center;
-      color: #cc0052;
-      margin-bottom: 5px;
-    }
+  .heart-sprinkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+  }
 
-    h2 {
-      font-size: 1.4em;
-      font-weight: normal;
-    }
+  .heart-icon {
+    position: absolute;
+    width: 30px;
+    opacity: 0.4;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite alternate;
+  }
 
-    p {
-      line-height: 1.7;
-      font-size: 1.1em;
-      margin: 15px 0;
-    }
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(20deg); }
+  }
 
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(255, 102, 153, 0.3);
+    backdrop-filter: blur(5px);
+    transition: background 0.4s ease;
+  }
 
-    .signature {
-      text-align: right;
-      margin-top: 40px;
-      font-style: italic;
-      font-size: 1.2em;
-    }
+  h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: #cc0052;
+    margin-bottom: 5px;
+  }
 
-    .ps {
-      font-size: 1em;
-      color: #d63384;
-      text-align: center;
-      margin-top: 30px;
-    }
+  h2 {
+    font-size: 1.4em;
+    font-weight: normal;
+  }
 
-    .heart {
-      text-align: center;
-      font-size: 2em;
-      color: red;
-      margin: 10px 0;
-      animation: pulse 1.5s infinite;
-    }
+  p {
+    line-height: 1.7;
+    font-size: 1.1em;
+    margin: 15px 0;
+  }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .signature {
+    text-align: right;
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 1.2em;
+  }
+
+  .ps {
+    font-size: 1em;
+    color: #d63384;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .heart {
+    text-align: center;
+    font-size: 2em;
+    color: red;
+    margin: 10px 0;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
 
   body.dark-theme {
     background-color: #000000;
-    color: #ffd700; /* gold */
+    color: #ffd700;
   }
 
   body.dark-theme .background {
     opacity: 0.1;
   }
 
-body.dark-theme .container {
-  background: linear-gradient(
-    to bottom right,
-    rgba(255, 215, 0, 0.12),
-    rgba(0, 0, 0, 0.8)
-  );
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-}
+  body.dark-theme .container {
+    background: linear-gradient(to bottom right, rgba(255, 215, 0, 0.12), rgba(0, 0, 0, 0.8));
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
 
-
-  body.dark-theme h1,
-  body.dark-theme h2 {
+  body.dark-theme h1, body.dark-theme h2 {
     color: #ffd700;
   }
 
@@ -177,54 +203,182 @@ body.dark-theme .container {
     color: #ffd700;
     text-shadow: 0 0 10px #ffd700;
   }
+
+  /* FIXED: Landing Screen */
+  #landing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 240, 245, 0.95);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  #landing img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  #landing h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #cc0052;
+  }
+
+  #landing input {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 20px;
+    border: 2px solid #ff66a3;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #landing button {
+    background-color: #ff66a3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #landing p {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    display: none;
+  }
+
+  .glider-contain {
+    margin: 40px auto;
+    max-width: 700px;
+    position: relative;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 102, 153, 0.2);
+  }
+
+  .glider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .glider img {
+    width: 75%;
+    aspect-ratio: 10/8;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .glider-prev,
+  .glider-next {
+    background-color: #ff66a3;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .glider-prev {
+    left: -20px;
+  }
+
+  .glider-next {
+    right: -20px;
+  }
+
+
+  .signature-box {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .signature-box input {
+    padding: 8px 16px;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 20px;
+    border: 2px solid #ff66a3;
+    font-size: 1em;
+    margin-right: 8px;
+  }
+
+  .signature-box button {
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 </style>
+
 </head>
 <body>
-
-  <!-- Toggle button -->
+<!-- Theme Toggle Button -->
   <button id="theme-toggle">🌗 Toggle Theme</button>
+<!-- Background -->
+<div class="background"></div>
 
-  <!-- Background image -->
-  <div class="background"></div>
+<!-- Heart sprinkles -->
+<div class="heart-sprinkles">
+  <img src="heart.jpg" class="heart-icon" style="top:5%; left:10%;">
+  <img src="heart.jpg" class="heart-icon" style="top:20%; left:80%;">
+  <img src="heart.jpg" class="heart-icon" style="top:35%; left:25%;">
+  <img src="heart.jpg" class="heart-icon" style="top:60%; left:70%;">
+  <img src="heart.jpg" class="heart-icon" style="top:75%; left:15%;">
+  <img src="heart.jpg" class="heart-icon" style="top:85%; left:55%;">
+  <img src="heart.jpg" class="heart-icon" style="top:50%; left:5%;">
+  <img src="heart.jpg" class="heart-icon" style="top:10%; left:65%;">
+  <img src="heart.jpg" class="heart-icon" style="top:10%; left:98%;">
+  <img src="heart.jpg" class="heart-icon" style="top:10%; left:75%;">
+  <img src="heart.jpg" class="heart-icon" style="top:80%; left:5%;">
+  <img src="heart.jpg" class="heart-icon" style="top:20%; left:65%;">
+  <img src="heart.jpg" class="heart-icon" style="top:90%; left:98%;">
+  <img src="heart.jpg" class="heart-icon" style="top:35%; left:75%;">
+</div>
 
-  <!-- Scattered heart icons -->
-  <div class="heart-sprinkles">
-    <!-- [Heart icons remain unchanged] -->
-    <img src="heart.jpg" class="heart-icon" style="top:5%; left:10%;">
-    <img src="heart.jpg" class="heart-icon" style="top:20%; left:80%;">
-    <img src="heart.jpg" class="heart-icon" style="top:35%; left:25%;">
-    <img src="heart.jpg" class="heart-icon" style="top:60%; left:70%;">
-    <img src="heart.jpg" class="heart-icon" style="top:75%; left:15%;">
-    <img src="heart.jpg" class="heart-icon" style="top:85%; left:55%;">
-    <img src="heart.jpg" class="heart-icon" style="top:50%; left:5%;">
-    <img src="heart.jpg" class="heart-icon" style="top:10%; left:65%;">
-    <img src="heart.jpg" class="heart-icon" style="top:10%; left:98%;">
-    <img src="heart.jpg" class="heart-icon" style="top:10%; left:75%;">
-    <img src="heart.jpg" class="heart-icon" style="top:80%; left:5%;">
-    <img src="heart.jpg" class="heart-icon" style="top:20%; left:65%;">
-    <img src="heart.jpg" class="heart-icon" style="top:90%; left:98%;">
-    <img src="heart.jpg" class="heart-icon" style="top:35%; left:75%;">
-  </div>
+<!-- Landing screen -->
+<div id="landing">
+  <img id="lock-img" src="locked-heart.png" alt="Locked Heart">
+  <h2>What's your nickname, love? 💖</h2>
+  <input type="text" id="nickname" placeholder="Enter your nickname...">
+  <button onclick="checkNickname()">Unlock 💌</button>
+  <p id="error-msg">Wrong nickname! 💔.. Who are you??!!</p>
+</div>
 
-  <!-- Letter content -->
+<!-- Letter content -->
+<div id="letter" style="display: none;">
   <div class="container">
-    <!-- [Your letter content remains unchanged] -->
     <h1>Official Offer Letter 💌</h1>
     <h2>For the Position of Girlfriend</h2>
-
-    <p><strong>From:</strong> Venkatesha Prasad Sridar<br>
-    410 Kerby St, #333<br>
-    Arlington, TX 76013</p>
-
-    <p><strong>To:</strong> Gayathri Kankanampati<br>
-    12013 Magazine St, Apt 8403<br>
-    Orlando, FL 32828</p>
-
+    <p><strong>From:</strong> Venkatesha Prasad Sridar<br>410 Kerby St, #333<br>Arlington, TX 76013</p>
+    <p><strong>To:</strong> Gayathri Kankanampati<br>12013 Magazine St, Apt 8403<br>Orlando, FL 32828</p>
     <p><strong>Date:</strong> 06/02/2025</p>
-
     <p><strong>Subject:</strong> Official Offer Letter for Girlfriend Position</p>
-
-<p>My Dear <strong>Kannamma, Azhagii, Kanagavalli,</strong></p>
+    <p>My Dear <strong>Kannamma, Azhagii, Kanagavalli,</strong></p>
 
     <p>After receiving your beautifully crafted HR-backed promotion letter, and recovering from the emotional meltdown it caused (in the best way possible), I am beyond thrilled to formally accept your offer.</p>
 
@@ -254,28 +408,163 @@ body.dark-theme .container {
     <p><strong>Compensation:</strong></p>
     <ul>
       <li>Full access to a loyal, caring, occasionally goofy, but always yours.</li>
-      <li>Guaranteed emotional safety, kisses on forehead, eyes, cheeks, neck, hands, legs etcc.., abrupt movie plans, and constant texts.</li>
+      <li>Guaranteed emotional safety, kisses on forehead, eyes, cheeks, neck, hands, legs etc.., abrupt movie plans, and constant texts.</li>
       <li>Unlimited “I love you”s and spontaneous dancing privileges in the kitchen.</li>
     </ul>
 
     <p><strong>Terms of Acceptance:</strong></p>
-    <p>Please confirm by smiling uncontrollably, calling me with a <strong>“Venkyyyy, I love youu ∞” </strong>or sending a photo of us that makes your heart do the thing.</p>
+    <p>Please confirm by smiling uncontrollably, calling me with a <strong>“Venkyyyy, I love youu ∞”</strong> or sending a photo of us that makes your heart do the thing.</p>
 
     <p>This is not just a reply—it’s a lifetime agreement request. Thank you for choosing me. I promise to love you in every version, every mood, every moment.</p>
 
-    <strong> <p class="signature">With all my love,<br>Your forever Venkyy</p></strong>
+    <p class="signature">With all my love,<br>Your forever Venkyy</p>
 
     <p class="ps">(PS: Let’s go moon-watching. You watch from Florida and I will watch from here. We may be separate now but by heart we are always together.)</p>
 
     <div class="heart">❤️❤️❤️</div>
+
+    <!-- Glider image slider -->
+    <div class="glider-contain">
+      <button class="glider-prev">«</button>
+      <div class="glider">
+        <img src="image1.jpg" alt="">
+        <img src="image2.jpg" alt="">
+        <img src="image3.jpg" alt="">
+        <img src="image5.jpg" alt="">
+        <img src="image6.jpg" alt="">
+        <img src="image7.jpg" alt="">
+      </div>
+      <button class="glider-next">»</button>
+    </div>
+
+    <!-- Signature Box -->
+    <div class="signature-box" id="signature-box" style="display: none;">
+      ✅ Accepted with love: 
+      <input type="text" id="signature-input" placeholder="Signed by: Lily">
+      <button onclick="signLetter()">Sign 💕</button>
+    </div>
   </div>
+</div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script>
+  const expectedNickname = "lily";
+
+  function checkNickname() {
+    const input = document.getElementById("nickname").value.trim().toLowerCase();
+    const error = document.getElementById("error-msg");
+    const lockImg = document.getElementById("lock-img");
+
+    if (input === expectedNickname.toLowerCase()) {
+      error.style.display = "none";
+
+      // Show heart confetti
+      for (let i = 0; i < 50; i++) {
+        const heart = document.createElement("div");
+        heart.textContent = "💖";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "-10vh";
+        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+        heart.style.animation = `fall ${Math.random() * 3 + 2}s ease-in forwards`;
+        heart.style.zIndex = 9999;
+        document.body.appendChild(heart);
+      }
+
+      // Change lock image
+      setTimeout(() => {
+        lockImg.src = "unlocked-heart.png";
+      }, 1500);
+
+      // Show letter + music + glider
+      setTimeout(() => {
+        document.getElementById("landing").style.display = "none";
+        document.body.classList.add("show-background");
+        document.getElementById("letter").style.display = "block";
+        document.getElementById("signature-box").style.display = "block";
+        document.getElementById("bg-music").play();
+
+        new Glider(document.querySelector('.glider'), {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          draggable: true,
+          arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+          },
+          scrollLock: true
+        });
+      }, 2500);
+    } else {
+      error.style.display = "block";
+    }
+  }
+
+  function signLetter() {
+    const input = document.getElementById("signature-input").value.trim().toLowerCase();
+    if (input === expectedNickname) {
+      // Confetti ✨
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement("div");
+        star.textContent = "✨";
+        star.style.position = "fixed";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.fontSize = Math.random() * 16 + 14 + "px";
+        star.style.opacity = "0";
+        star.style.animation = "pop 2s forwards ease";
+        star.style.zIndex = 9999;
+        document.body.appendChild(star);
+      }
+
+      // Message Toast
+      const toast = document.createElement("div");
+      toast.innerText = "Here's to a life full of happiness, goofiness, love and joy. To GV ❤️ 🥂";
+      toast.style.position = "fixed";
+      toast.style.bottom = "30px";
+      toast.style.left = "50%";
+      toast.style.transform = "translateX(-50%)";
+      toast.style.background = "#ffccdd";
+      toast.style.color = "#b30059";
+      toast.style.fontWeight = "bold";
+      toast.style.padding = "12px 24px";
+      toast.style.borderRadius = "20px";
+      toast.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
+      toast.style.zIndex = 10000;
+      toast.style.fontFamily = "Quicksand, sans-serif";
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.remove();
+      }, 5000);
+    }
+  }
+
+  // Theme toggle
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+  });
+
+  // Custom keyframes
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
 
 
-  <!-- Theme Toggle Script -->
-  <script>
-    document.getElementById("theme-toggle").addEventListener("click", function() {
-      document.body.classList.toggle("dark-theme");
-    });
-  </script>
+<!-- Background Music -->
+<audio id="bg-music" src="music.mp3" loop></audio>
 </body>
 </html>
